@@ -73,7 +73,7 @@ namespace Topic_2___MonoGame_Assignment
 
             titleTexture = Content.Load<Texture2D>("titleScreen");
             sportsBackgroundTexture = Content.Load<Texture2D>("Images/sportsBackground");
-            for (int i = 1; i <= 13; i++)
+            for (int i = 1; i <= 10; i++)
                 textures.Add(Content.Load<Texture2D>("Images/ball" + i));
 
             for (int i = 0; i < ballRects.Count; i++)
@@ -140,6 +140,10 @@ namespace Topic_2___MonoGame_Assignment
             if (screen == Screen.Title)
             {
                 _spriteBatch.Draw(titleTexture, window, Color.White);
+                _spriteBatch.DrawString(spriteFont, "Hannah Anderson", new Vector2(250, 200), Color.Blue);
+                _spriteBatch.DrawString(spriteFont, message, new Vector2(10, 10), Color.Black);
+                _spriteBatch.DrawString(spriteFont, "Click the left mouse button", new Vector2(10, 50), Color.Black);
+                _spriteBatch.DrawString(spriteFont, "to get rid of the balls!", new Vector2(10, 90), Color.Black);
             }
             else if (screen == Screen.Field)
             {
@@ -149,7 +153,7 @@ namespace Topic_2___MonoGame_Assignment
                 _spriteBatch.Draw(ballTextures[i], ballRects[i], Color.White);
             }
 
-            _spriteBatch.DrawString(spriteFont, message, new Vector2(10, 10), Color.Black);
+
 
             _spriteBatch.End();
 
